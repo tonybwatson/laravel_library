@@ -13,6 +13,6 @@ class UserRoleSeeder extends Seeder
      */
     public function run()
     {
-        //
+        \App\Models\UserRole::factory(5)->create();
     }
 }

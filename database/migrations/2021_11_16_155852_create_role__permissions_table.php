@@ -25,6 +25,7 @@ class CreateRolePermissionsTable extends Migration
                 ->references('id')
                 ->on('permissions')
                 ->cascade('delete');
+            $table->timestamps();
         });
     }
 

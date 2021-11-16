@@ -5,9 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Book_Genre extends Model
+class UserRole extends Model
 {
     use HasFactory;
 
-    protected $table = 'book_genre';
+    protected $fillable = ['role_id', 'user_id'];
+
+    protected $table = 'user_roles';
 }

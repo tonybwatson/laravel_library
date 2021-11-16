@@ -13,6 +13,6 @@ class CheckoutSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Checkout::factory(5)->create();
+        \App\Models\Checkout::factory(10)->create();
     }
 }

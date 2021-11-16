@@ -13,6 +13,6 @@ class BookGenreSeeder extends Seeder
      */
     public function run()
     {
-        //
+        \App\Models\BookGenre::factory(10)->create();
     }
 }

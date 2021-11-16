@@ -25,6 +25,8 @@ class CreateBookAuthorTable extends Migration
                 ->references('id')
                 ->on('authors')
                 ->cascade('delete');
+
+            $table->timestamps();
         });
     }
 

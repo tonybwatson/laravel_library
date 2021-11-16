@@ -3,6 +3,8 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Author;
+use App\Models\Book;
 
 class BookAuthorFactory extends Factory
 {
@@ -14,7 +16,8 @@ class BookAuthorFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'author_id' => Author::all()->random()->id,
+            'book_id' => Book::all()->random()->id,
         ];
     }
 }

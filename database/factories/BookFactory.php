@@ -16,6 +16,9 @@ class BookFactory extends Factory
         return [
             'name' => $this->faker->name,
             'description' => $this->faker->sentence,
+            'isbn' => $this->faker->isbn13,
+            'pages' => $this->faker->numberBetween(50, 1000),
+            'current_condition' => $this->faker->numberBetween(1, 5),
             'publication_year' => (string) $this->faker->year
         ];
     }

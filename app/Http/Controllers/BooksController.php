@@ -41,6 +41,9 @@ class BooksController extends Controller
         $book = Book::create([
             'name' => $faker->name,
             'description' => $faker->sentence,
+            'isbn' => $faker->isbn13(),
+            'pages' => $faker->numberBetween(50, 1000),
+            'current_condition' => $faker->numberBetween(1,5),
             'publication_year' => $faker->year
         ]);
 

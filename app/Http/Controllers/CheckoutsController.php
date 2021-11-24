@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
 use App\Models\Checkout;
+use App\Models\User;
+use DateTime;
 use Illuminate\Http\Request;
 
 class CheckoutsController extends Controller
@@ -35,7 +38,18 @@ class CheckoutsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $faker = \Faker\Factory::create(1);
+
+        $checkout = Checkout::create([
+            'book_id' => Book::all()->random()->id,
+            'user_id' => User::all()->random()->id,
+            'checkedout_condition' => $faker->numberBetween(1,5),
+            'checkedin_condition' => $faker->numberBetween(1,5),
+            'checkout_date' => now(),
+            'checkin_date' => '',
+            'due_date' => $faker->dateTimeThisMonth(),
+            'checked_out' => true
+        ]);
     }
 
     /**

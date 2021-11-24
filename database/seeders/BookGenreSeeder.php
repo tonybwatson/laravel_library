@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\BookGenre;
 
 class BookGenreSeeder extends Seeder
 {
@@ -13,6 +14,6 @@ class BookGenreSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\BookGenre::factory(10)->create();
+        BookGenre::factory(100)->create();
     }
 }

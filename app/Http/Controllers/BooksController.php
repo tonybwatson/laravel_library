@@ -3,8 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\BooksResource;
+use App\Models\Author;
 use App\Models\Book;
+use App\Models\BookAuthor;
+use App\Models\Genre;
+use App\Models\BookGenre;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class BooksController extends Controller
 {
@@ -25,7 +30,7 @@ class BooksController extends Controller
      */
     public function create()
     {
-        //
+Log::info('create function called');
     }
 
     /**
@@ -46,6 +51,20 @@ class BooksController extends Controller
             'current_condition' => $faker->numberBetween(1,5),
             'publication_year' => $faker->year
         ]);
+
+        $bookgenre = BookGenre::create([
+            'genre_id' => Genre::all()->random()->id,
+            'book_id' => $book->id,
+        ]);
+
+        $author = Author::create([
+            'name' => $faker->name
+        ]);
+
+        // $bookauthor = BookAuthor::create([
+        //     'author_id' => $author->id,
+        //     'book_id' => $book->id,
+        // ]);
 
         return new BooksResource($book);
     }

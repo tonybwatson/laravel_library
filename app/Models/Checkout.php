@@ -9,7 +9,7 @@ class Checkout extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['book_id', 'user_id', 'checkedout_condition', 'checkedin_condition', 'checkout_date', 'checkin_date', 'due_date'];
+    protected $fillable = ['book_id', 'user_id', 'checkedout_condition', 'checkedin_condition', 'checkout_date', 'checkin_date', 'due_date', 'checked_out'];
 
 
     protected $table = 'checkout';

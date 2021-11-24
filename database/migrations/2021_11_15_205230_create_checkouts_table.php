@@ -30,6 +30,7 @@ class CreateCheckoutsTable extends Migration
             $table->dateTime('checkout_date');
             $table->dateTime('checkin_date');
             $table->dateTime('due_date');
+            $table->boolean('checked_out');
             $table->timestamps();
         });
     }

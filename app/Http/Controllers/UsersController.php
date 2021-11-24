@@ -25,7 +25,13 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+        $user = User::create(1)([
+        'user_name' => 'user_name',
+            'full_name' => 'full_name',
+            'email' => 'email',
+            'password' => 'password'
+        ]);
+        return new UsersResource($user);
     }
 
     /**
@@ -36,16 +42,16 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        $faker = \Faker\Factory::create(1);
+        // $faker = \Faker\Factory::create(1);
 
-        $user = User::create([
-            'user_name' => 'user_name',
-            'full_name' => 'full_name',
-            'email' => 'email',
-            'password' => 'password'
-        ]);
+        // $user = User::create([
+            // 'user_name' => 'user_name',
+            // 'full_name' => 'full_name',
+            // 'email' => 'email',
+            // 'password' => 'password'
+        // ]);
 
-        return new UsersResource($user);
+        // return new UsersResource($user);
     }
 
     /**
@@ -83,7 +89,7 @@ class UsersController extends Controller
             'user_name'=>$request->input('user_name'),
             'full_name'=>$request->input('full_name'),
             'email'=>$request->input('email'),
-            'password'=>$request->input('email')
+            'password'=>$request->input('password')
         ]);
     }
 

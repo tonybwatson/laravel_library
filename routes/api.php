@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\AuthorsController;
 use App\Http\Controllers\BooksController;
+use App\Http\Controllers\CheckoutsController;
 use App\Http\Controllers\UsersController;
+use App\Models\Checkout;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -25,5 +27,6 @@ Route::middleware('auth:api')->prefix('v1')->group(function() {
     Route::apiResource('/authors', AuthorsController::class);
     Route::apiResource('/books', BooksController::class);
     Route::apiResource('/users', UsersController::class);
+    Route::apiResource('/checkouts', CheckoutsController::class);
 });
 

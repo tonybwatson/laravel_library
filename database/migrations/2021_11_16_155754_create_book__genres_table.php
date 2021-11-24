@@ -23,7 +23,7 @@ class CreateBookGenresTable extends Migration
             $table->unsignedBigInteger('book_id');
             $table->foreign('book_id')
                 ->references('id')
-                ->on('genres')
+                ->on('books')
                 ->cascade('delete');
             $table->timestamps();
         });

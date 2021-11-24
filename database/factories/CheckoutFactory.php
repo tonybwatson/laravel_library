@@ -22,7 +22,8 @@ class CheckoutFactory extends Factory
             'checkedin_condition' => $this->faker->numberBetween(1, 5),
             'due_date' => $this->faker->dateTime(),
             'checkout_date' => $this->faker->dateTime(''),
-            'checkin_date' => $this->faker->dateTime('')
+            'checkin_date' => $this->faker->dateTime(''),
+            'checked_out' => $this->faker->boolean()
         ];
     }
 }
